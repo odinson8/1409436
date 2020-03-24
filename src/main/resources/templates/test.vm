@@ -1,0 +1,38 @@
+<!--
+Written by Veniture
+
+TODO
+İssue Link olsun
+-->
+$webResourceManager.requireResources("com.veniture.PortfolioManagement:PortfolioManagement-resources")
+
+
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by venITure
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <title>Test</title>
+
+    <meta name="decorator" content="atl.general">
+    <style id="css">
+
+    </style>
+
+    <script>
+        AJS.$(document).ready(function (){
+
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -7,17 +7,9 @@
         <param name="plugin-logo">images/pluginLogo.png</param>
     </plugin-info>
 
-    <!-- add our i18n resource -->
-    <resource type="i18n" name="i18n" location="resourceManagement"/>
-    <!-- add our web resources -->
-    <web-resource key="resourceManagement-resources" name="resourceManagement Web Resources">
+    <web-resource key="serviceDeskUtils-resources" name="Service Desk Utils Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
-        <resource type="download" name="hideTextServiceDesk.js" location="/js/hideTextServiceDesk.js"/>
-        <context>customerportal</context>
-    </web-resource>
-
-    <web-resource key="resourceManagement-resources2" name="resourceManagement Web Resources">
-        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <resource type="download" name="serviceDeskUtils.js" location="/js/serviceDeskUtils.js"/>
         <resource type="download" name="refreshPage.js" location="/js/refreshPage.js"/>
         <context>customerportal</context>
     </web-resource>
