@@ -50,8 +50,8 @@ AJS.$(document).ready(function(){
     function swapLoop() {                   //create a loop function
         setTimeout(function () {    //call a 0.5s setTimeout when the loop is called
             console.log("Swap process begun");
-            if (AJS.$(".aui-header  ul.aui-nav > li.header-links-Reports.intensoLinks").length) {
-                var reportLi=AJS.$(AJS.$(".aui-header  ul.aui-nav > li.header-links-Reports.intensoLinks").get(0));
+            if (AJS.$("li.header-links-Reports.intensoLinks").length) {
+                var reportLi=AJS.$(AJS.$("li.header-links-Reports.intensoLinks").get(0));
                 var secondItem=AJS.$(AJS.$(".aui-header  ul.aui-nav").children()[1]);
                 secondItem.css("background-color", "blue");
                 secondItem.css("border-radius", "7px");

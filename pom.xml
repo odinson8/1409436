@@ -7,15 +7,15 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.veniture</groupId>
     <artifactId>serviceDeskUtils</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
 
     <organization>
         <name>venITure</name>
         <url>http://www.venITure.net/</url>
     </organization>
 
-    <name>PortalTextHideAndReload</name>
-    <description>This plugin will hide "Chrome warning" and refresh page after issue create in Service Desk Portal</description>
+    <name>serviceDeskExtensions</name>
+    <description>This plugin will add new features to the Service Desk Portal</description>
     <packaging>atlassian-plugin</packaging>
 
     <dependencies>
