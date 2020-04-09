@@ -1,27 +1,32 @@
 AJS.$(document).ready(function(){
-    if (navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Edg") && !navigator.userAgent.includes("OPR")) {
-        var shouldBreak = 0;
-        var i = 1;                              //set counter to 1
-        var i2 = 1;                              //set counter to 1
-        var i3 = 1;                              //set counter to 1
 
-        function hideLoop() {                   //create a loop function
-            setTimeout(function () {    //call a 0.5s setTimeout when the loop is called
+    var i = 1;                              //set counter to 1
+    var i2 = 1;                              //set counter to 1
+    var i3 = 1;                              //set counter to 1
+    function hideChromeWarning() {                   //create a loop function
 
-                if (AJS.$('div.cv-description > p').length) {
-                    AJS.$('div.cv-description > p').hide();
-                    shouldBreak = true;
-                }
+        if (navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Edg") && !navigator.userAgent.includes("OPR")) {
+            var shouldBreak = 0;
 
-                i++;                            //  increment the counter
-                if (i < 10) {
-                    if (!shouldBreak) {
-                        hideLoop();             //  ..  again which will trigger another
-                    }                           //  if the counter < 6, call the loop function
-                }                               //  ..  setTimeout()
-            }, 488)
+            function hideLoop() {                   //create a loop function
+                setTimeout(function () {    //call a 0.5s setTimeout when the loop is called
+
+                    if (AJS.$('div.cv-description > p').length) {
+                        AJS.$('div.cv-description > p').hide();
+                        shouldBreak = true;
+                    }
+
+                    i++;                            //  increment the counter
+                    if (i < 8) {
+                        if (!shouldBreak) {
+                            hideLoop();             //  ..  again which will trigger another
+                        }                           //  if the counter < 6, call the loop function
+                    }                               //  ..  setTimeout()
+                }, 488)
+            }
+
+            hideLoop();
         }
-        hideLoop();
     }
 
     var shouldBreakForASB = 0;
@@ -53,21 +58,26 @@ AJS.$(document).ready(function(){
             if (AJS.$("li.header-links-Reports.intensoLinks").length) {
                 var reportLi=AJS.$(AJS.$("li.header-links-Reports.intensoLinks").get(0));
                 var secondItem=AJS.$(AJS.$(".aui-header  ul.aui-nav").children()[1]);
-                secondItem.css("background-color", "blue");
-                secondItem.css("border-radius", "7px");
                 AJS.$(reportLi).before(secondItem);
+                var firstItem=AJS.$(AJS.$(".aui-header  ul.aui-nav").children()[0]);
+                firstItem.css("background-color", "#ff1e0f");
+                firstItem.css("border-radius", "7px");
                 shouldBreakForSwap = true;
             }
 
             i3++;                            //  increment the counter
-            if (i3 < 10) {
+            if (i3 < 6) {
                 if (!shouldBreakForSwap) {
                     swapLoop();             //  ..  again which will trigger another
                 }                           //  if the counter < 6, call the loop function
             }                               //  ..  setTimeout()
-        }, 400)
+        }, 100)
     }
-    swapLoop();
+
+    AJS.$(document).ajaxComplete(function() {
+        swapLoop();
+        hideChromeWarning();
+    });
 
     // var counter = 1;
     // var shouldContinue = "true";
