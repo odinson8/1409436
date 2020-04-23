@@ -14,7 +14,7 @@
         <url>http://www.venITure.net/</url>
     </organization>
 
-    <name>serviceDeskExtensions</name>
+    <name>Jira Service Desk Extensions</name>
     <description>This plugin will add new features to the Service Desk Portal</description>
     <packaging>atlassian-plugin</packaging>
 

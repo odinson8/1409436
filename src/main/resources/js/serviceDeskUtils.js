@@ -35,14 +35,16 @@ AJS.$(document).ready(function(){
 
             var usernames = AJS.$("header.clearfix h4:not([title='Details'])");
             if (usernames.length) {
-                    usernames.each(function () {
+                usernames.each(function () {
+                    if (AJS.$("header.clearfix h4:not([title='Details'])").siblings().length < 2){
                         AJS.$("<time>answered as below</time>").insertAfter(AJS.$(this))
-                    });
-                    shouldBreakForASB = true;
+                    }
+                });
+                shouldBreakForASB = true;
             }
 
             i2++;                            //  increment the counter
-            if (i2 < 10) {
+            if (i2 < 5) {
                 if (!shouldBreakForASB) {
                     addASBtextToTheUsernames();             //  ..  again which will trigger another
                 }                           //  if the counter < 6, call the loop function
@@ -63,7 +65,10 @@ AJS.$(document).ready(function(){
                 firstItem.css("background-color", "#ff1e0f");
                 firstItem.css("border-radius", "7px");
                 shouldBreakForSwap = true;
-            }
+                if (window.location.href==="https://crm.turkishtechnic.com/servicedesk/customer/portal/1") {
+                        firstItem.hide();
+                    }
+                }
 
             i3++;                            //  increment the counter
             if (i3 < 6) {
@@ -77,6 +82,7 @@ AJS.$(document).ready(function(){
     AJS.$(document).ajaxComplete(function() {
         swapLoop();
         hideChromeWarning();
+        addASBtextToTheUsernames();
     });
 
     // var counter = 1;

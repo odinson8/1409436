@@ -1,5 +1,5 @@
 AJS.$(document).ready(function(){
-    var timeout = 33000;
+    var timeout = 10000;
 
     AJS.$(document).ajaxComplete(function() {
         if (AJS.$('div.form-body > label').length) {
