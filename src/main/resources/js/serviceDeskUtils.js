@@ -32,15 +32,24 @@ AJS.$(document).ready(function(){
     var shouldBreakForASB = 0;
     function addASBtextToTheUsernames() {                   //create a loop function
         setTimeout(function () {    //call a 0.5s setTimeout when the loop is called
-
             var usernames = AJS.$("header.clearfix h4:not([title='Details'])");
+
             if (usernames.length) {
-                usernames.each(function () {
-                    if (AJS.$("header.clearfix h4:not([title='Details'])").siblings().length < 2){
-                        AJS.$("<time>answered as below</time>").insertAfter(AJS.$(this))
-                    }
+                var added="";
+                AJS.$("header.clearfix h4:not([title='Details'])").each(function () {
+                    AJS.$(this).siblings().each(function () {
+                        if(AJS.$(this).text().includes("answered as below")){
+                            added=true;
+                        }
+                    });
                 });
-                shouldBreakForASB = true;
+
+                if(!added){
+                    usernames.each(function () {
+                        AJS.$("<time>answered as below</time>").insertAfter(AJS.$(this));
+                    });
+                    shouldBreakForASB = true;
+                }
             }
 
             i2++;                            //  increment the counter
