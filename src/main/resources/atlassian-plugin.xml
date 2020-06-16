@@ -13,4 +13,12 @@
         <resource type="download" name="refreshPage.js" location="/js/refreshPage.js"/>
         <context>customerportal</context>
     </web-resource>
+
+
+    <web-resource key="berk-resources" name="berkUtils Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <resource type="download" name="berk.js" location="/js/berk.js"/>
+        <context>atl.general</context>
+    </web-resource>
+
 </atlassian-plugin>

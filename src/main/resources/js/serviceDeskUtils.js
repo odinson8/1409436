@@ -1,6 +1,6 @@
 AJS.$(document).ready(function(){
 
-    var i = 1;                              //set counter to 1
+    var i = 1;                               //set counter to 1
     var i2 = 1;                              //set counter to 1
     var i3 = 1;                              //set counter to 1
     function hideChromeWarning() {                   //create a loop function

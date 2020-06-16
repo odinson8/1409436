@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ThyServiceDeskUtils" />
         <module name="jirapluginskeleton-master" />
-        <module name="thy_serviceDesk_JS_utils" />
         <module name="resourceManagement" />
+        <module name="thy_serviceDesk_JS_utils" />
+        <module name="ThyServiceDeskUtils" />
       </profile>
     </annotationProcessing>
   </component>
