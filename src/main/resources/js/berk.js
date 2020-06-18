@@ -1,5 +1,4 @@
 AJS.$(document).ready(function(){
-    var timeout = 10000;
 
     // AJS.$.ajaxSetup({
     //     dataFilter: function (data, type) {
@@ -12,10 +11,29 @@ AJS.$(document).ready(function(){
     // });
 
     AJS.$( document ).ajaxComplete(function( event, xhr, settings ) {
+        // console.log("---")
+        // console.log(settings.url)
+        // console.log(settings.url.includes("orkflowUIDispatcher.jspa") && settings.url.includes("action=31"))
+        // console.log("---")
         if ( settings.url.includes("AssignIssue") ) {
-
             var commentDiv=AJS.$(".sd-comment-field-edit-root");
             commentDiv.hide();
+        }
+
+        else if ( settings.url.includes("orkflowUIDispatcher.jspa") && settings.url.includes("action=31")) {
+            var shouldBreak;
+            breakme: for (i = 0; i < 7; i++) {
+                setTimeout(function() {
+                    if (document.querySelector("#sd-comment-tabs > li.js-sd-external-comment.menu-item")){
+                        document.querySelector("#sd-comment-tabs > li.js-sd-external-comment.menu-item").style.display="none";
+                        document.querySelector("#sd-comment-tabs > li.js-sd-internal-comment.menu-item").click();
+                        shouldBreak=true;
+                    }
+                }, 300);
+                if (shouldBreak){
+                    break;
+                }
+            }
         }
     });
 
