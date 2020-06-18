@@ -17,7 +17,7 @@
 
     <web-resource key="berk-resources" name="berkUtils Web Resources">
         <dependency>com.atlassian.auiplugin:ajs</dependency>
-        <resource type="download" name="berk.js" location="/js/berk.js"/>
+        <resource type="download" name="general.js" location="/js/general.js"/>
         <context>atl.general</context>
     </web-resource>
 

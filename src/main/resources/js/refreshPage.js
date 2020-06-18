@@ -4,16 +4,6 @@ AJS.$(document).ready(function(){
     AJS.$(document).ajaxComplete(function() {
 
 
-        AJS.$.ajaxSetup({
-            beforeSend: function (xhr,settings) {
-                console.log(settings.data)
-                console.log(settings.url);
-                console.log(xhr);
-
-            }
-        });
-
-
         if (AJS.$('div.form-body > label').length) {
             if (AJS.$("div.form-body > label").text().includes("Comment on this request...")) {
                 console.log("Starting refreshPage Script");
